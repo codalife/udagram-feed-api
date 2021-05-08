@@ -1,11 +1,20 @@
 language: node_js
 node_js:
-    - 10
+    -10
 
 services:
     - docker
 
-before_install:
+# Pre-testing installs
+install:
+    - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+    - echo "no tests"
+  
+
+script:
     - docker build -t feed-api .
     - docker tag feed-api anuardocker/feed-api:latest
 
